@@ -29,3 +29,14 @@ override.tf.json
 # example: *tfplan*
 
 terraform.tfvars
+backend-config.txt
+
+
+# Local settings
+*.lock.hcl
+.terraform.lock.hcl
+
+# VS Code and OS junk
+.vscode/
+.DS_Store
+Thumbs.db

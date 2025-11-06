@@ -32,7 +32,8 @@ resource "azurerm_static_site" "swa" {
 
 resource "azurerm_static_site_custom_domain" "txt" {
   static_site_id  = azurerm_static_site.swa.id
-  domain_name     = var.website_name
+  domain_name = "${var.website_name}.${var.custom_domain_name}"
+
   validation_type = "dns-txt-token"
 }
 
@@ -52,7 +53,7 @@ resource "azurerm_dns_txt_record" "txt" {
   ttl                 = 300
   record {
     # Conditional required due to issue https://github.com/hashicorp/terraform-provider-azurerm/issues/14750
-    value = azurerm_static_site_custom_domain.txt.validation_token == "" ? "validated" : azurerm_static_site_custom_domain.txt.validation_token
+    value = "_jjyp3fv0033pq0fxvg5mtbyroy89a6w"
   }
 }
 

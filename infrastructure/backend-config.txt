@@ -1,4 +1,4 @@
-resource_group_name="10bitpodcastcomtfdata"
-storage_account_name="10bitpodcastcomtfdata"
-container_name="tfdata"
-
+resource_group_name  = "rg-mystaticwebsite-dev"
+storage_account_name = "stmystaticwebdev"
+container_name       = "tfstate"
+key                  = "infra.tfstate"
